@@ -42,8 +42,15 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - How many times are you calling each callback function?
 *******************************************************************************/
 
-let selectiveMap = function() {
+let selectiveMap = function(array, cb1, cb2) {
 
+    for (let i = 0; i < array.length; i++) {
+        if (cb1(array[i])) {
+            array[i] = cb2(array[i]);
+        }
+    }
+
+    return array; 
 };
 
 
